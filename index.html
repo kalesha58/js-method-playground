@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JS Method Playground</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+  <style>
+    body { font-family: Arial, sans-serif; background:#fafafa; padding:20px; max-width:800px; margin:auto; }
+    textarea, select, button { width:100%; margin-top:10px; font-family: monospace; font-size:14px; }
+    .controls { display:flex; gap:10px; flex-wrap:wrap; }
+    .controls button { flex: 1; }
+    #output { background:#272822; color:#f8f8f2; padding:10px; margin-top:20px; min-height:80px; white-space:pre-wrap; }
+    #history { margin-top:20px; }
+    #history li { cursor: pointer; color: blue; text-decoration:underline; }
+    #history li:hover { color: darkblue; }
+  </style>
+</head>
+<body>
+
+  <h2>🔧 JS Method Playground</h2>
+
+  <div class="controls">
+    <label>Method: <select id="method"></select></label>
+    <button onclick="loadExample()">Load Example</button>
+    <button onclick="run()">▶️ Run</button>
+  </div>
+
+  <textarea id="arrayInput" rows="2">[1, 2, 3, 4]</textarea>
+  <textarea id="functionInput" rows="3">x => x * 2</textarea>
+
+  <pre id="output" class="language-js"><code id="outputCode" class="language-js"></code></pre>
+
+  <h3>History</h3>
+  <ul id="history"></ul>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="playground.js"></script>
+</body>
+</html>
